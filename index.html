@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Sudoku</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="script.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload="trigger();">
+    <div id="container">
+        <div id="toplayer">
+            <div id="heading"><h1>Online Sudoku</h1></div>
+            <div id="inputboxdiv"><select id="selectinput" onchange="levelChanged();"><option>Easy</option><option>Medium</option><option>Hard</option></select></div>            
+        </div>
+        <div id="centrallayer">
+            <div id="leftcolumn"></div>
+            <div id="rightcolumn">                
+                <div id="answerdabba"><div id="parda"><img src="cartoon.jpg" /></div></div>
+                <div id="iloose" onclick="pardagirao();">Show answer</div>
+                <div id="goodbox"></div>
+            </div>
+        </div>
+        <div id="bottomlayer"><br/>- by Sampad</div>
+    </div>
+</body>
+</html>
