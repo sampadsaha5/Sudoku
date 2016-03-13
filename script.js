@@ -13,7 +13,21 @@ function setWidthAndHeight(){
     document.getElementById('container').style.height = docHeight + "px";
     document.getElementById('centrallayer').style.height = docHeight - 115 + 'px';
 }
+function pardagirao(){
 
+	if(document.getElementById('parda').style.visibility == 'hidden'){
+        document.getElementById('parda').style.visibility = 'visible';
+        document.getElementById('goodbox').innerHTML = '';
+    }else document.getElementById('parda').style.visibility = 'hidden';
+    if(document.getElementById('iloose').innerHTML == 'Show answer'){
+        document.getElementById('iloose').innerHTML = 'Hide answer';
+        document.getElementById('goodbox').innerHTML = 'Cheater !!!';
+    }else{
+        document.getElementById('iloose').innerHTML = 'Show answer';
+        document.getElementById('goodbox').innerHTML = '';
+    }
+
+}
 
 
 
