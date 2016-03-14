@@ -35,11 +35,7 @@ function appender(){
             document.getElementById('leftcolumn').innerHTML = document.getElementById('leftcolumn').innerHTML + '<div id="puz' + i + '' + j + '" contenteditable="true" onkeyup="checkAnswers();"></div>';
         }
     }
-    for(i=1; i<=9; i++){
-        for(j=1; j<=9; j++){
-            document.getElementById('answerdabba').innerHTML = document.getElementById('answerdabba').innerHTML + '<div id="ans' + i + '' + j + '"></div>';
-        }
-    }
+    
     for(j=3; j<=6; j = j+3 ){
         for(i=1; i<=9; i++){
             document.getElementById('puz' + i + '' + j).style.borderRight = '3px solid blue';
