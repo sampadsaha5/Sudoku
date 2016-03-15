@@ -66,6 +66,13 @@ function levelChanged(){
 function fillAnswer(){
     var i=false;
     var j=false;
+    for(i=1; i<=9; i++ ){
+        for(j=1; j<=9; j++ ){
+            document.getElementById('ans'+i+''+j).innerHTML = sudoku[i-1][j-1];
+            document.getElementById('puz'+i+''+j).innerHTML = sudoku[i-1][j-1];
+            document.getElementById('puz'+i+''+j).style.color = "black";
+        }
+    }
     
 }
 
