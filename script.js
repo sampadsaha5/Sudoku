@@ -64,7 +64,14 @@ function levelChanged(){
 }
 
 
-
+function randomize(){
+    var numg = false;
+    var colg = false;
+    var rowg = false;
+    var h_or_v = false;
+    var temp;
+    
+}
 
 
 
