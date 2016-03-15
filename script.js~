@@ -70,6 +70,46 @@ function randomize(){
     var rowg = false;
     var h_or_v = false;
     var temp;
+    for(var n=0; n<no_of_times; n++){
+        h_or_v = parseInt(Math.random()*2+1);
+        if(h_or_v == 1){
+            colg = parseInt(Math.random()*3+1);
+            numg = parseInt(Math.random()*2+1);
+            if(colg == 1){
+                numg = numg + 0;
+            }
+            if(colg == 2){
+                numg = numg + 3;
+            }
+            if(colg == 3){
+                numg = numg + 6;
+            }
+            for(var te=1; te<=9; te++){
+                temp = sudoku[te-1][numg-1];
+                sudoku[te-1][numg-1] = sudoku[te-1][numg];
+                sudoku[te-1][numg] = temp;
+            }
+        }
+        if(h_or_v == 2){
+            rowg = parseInt(Math.random()*3+1);
+            numg = parseInt(Math.random()*2+1);
+            if(rowg == 1){
+                numg = numg + 0;
+            }
+            if(rowg == 2){
+                numg = numg + 3;
+            }
+            if(rowg == 3){
+                numg = numg + 6;
+            }
+            for(var te=1; te<=9; te++){
+                temp = sudoku[numg-1][te-1];
+                sudoku[numg-1][te-1] = sudoku[numg][te-1];
+                sudoku[numg][te-1] = temp;
+            }
+        }
+    }
+
     
 }
 

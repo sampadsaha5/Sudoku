@@ -63,6 +63,11 @@ function levelChanged(){
     generate(level);
 }
 
+function fillAnswer(){
+    var i=false;
+    var j=false;
+    
+}
 
 function randomize(){
     var numg = false;
