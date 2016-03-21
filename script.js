@@ -14,8 +14,7 @@ function setWidthAndHeight(){
     document.getElementById('centrallayer').style.height = docHeight - 115 + 'px';
 }
 function pardagirao(){
-
-	if(document.getElementById('parda').style.visibility == 'hidden'){
+    if(document.getElementById('parda').style.visibility == 'hidden'){
         document.getElementById('parda').style.visibility = 'visible';
         document.getElementById('goodbox').innerHTML = '';
     }else document.getElementById('parda').style.visibility = 'hidden';
@@ -26,7 +25,6 @@ function pardagirao(){
         document.getElementById('iloose').innerHTML = 'Show answer';
         document.getElementById('goodbox').innerHTML = '';
     }
-
 }
 function appender(){
     var i=0, j=0;
@@ -62,7 +60,38 @@ function levelChanged(){
     }
     generate(level);
 }
-
+function generate(level){
+    populate();
+    randomize();
+    fillAnswer();
+    makeGame(level);
+}
+function makeGame(level){
+    var c = false;
+    var r = false;
+    if(level == 1){
+        deleter(0,40);
+    }
+    if(level == 2){
+        deleter(0,47);
+    }
+    if(level == 3){
+        deleter(0,54);
+    }
+    function deleter(a,t){
+        if(a == t){
+            return false;
+        }else{
+            c = parseInt(Math.random()*9+1);
+            r = parseInt(Math.random()*9+1);
+            if(document.getElementById('puz'+r+''+c).innerHTML != ''){
+                document.getElementById('puz'+r+''+c).innerHTML = '';
+                document.getElementById('puz'+r+''+c).style.color = 'blue';                
+                deleter(a+1,t);
+            }else deleter(a,t);
+        }
+    }
+}
 function fillAnswer(){
     var i=false;
     var j=false;
@@ -73,9 +102,7 @@ function fillAnswer(){
             document.getElementById('puz'+i+''+j).style.color = "black";
         }
     }
-    
 }
-
 function randomize(){
     var numg = false;
     var colg = false;
@@ -121,14 +148,32 @@ function randomize(){
             }
         }
     }
-
-    
 }
-
-
-
-
-
+function populate(){
+    var i=0, j=0;
+    var startpoint = false;
+    var count = false;
+    var ip = false;
+    for(j=1; j<=9; j++){
+        if((j/3) <= 1 && (j/3) > 0 ){
+            startpoint = 1+(j-1)*3;
+        }
+        if((j/3) <= 2 && (j/3) > 1 ){
+            startpoint = 2+(j-1)*3;
+        }
+        if((j/3) <= 3 && (j/3) > 2 ){
+            startpoint = 3+(j-1)*3;
+        }
+        count = 1;
+        for(i=startpoint; i<=(startpoint+8); i++) {
+            if( i-9*parseInt(i/9) == 0){
+                ip = 9;
+            }else ip = i-9*parseInt(i/9);
+            sudoku[ip-1][j-1] = count;
+            count++;
+        }
+    }
+}
 function checkAnswers(){
     var i = false;
     var j = false;
